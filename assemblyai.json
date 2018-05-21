@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "33adba29-552e-4e4d-aa45-df74f9135711",
+		"name": "AssemblyAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create trancript from audio url",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"audio_src_url\": \"https://s3-us-west-2.amazonaws.com/chappy/dnc-2004-speech-8khz_clip.wav\"\n}"
+				},
+				"url": {
+					"raw": "https://api.assemblyai.com/transcript",
+					"protocol": "https",
+					"host": [
+						"api",
+						"assemblyai",
+						"com"
+					],
+					"path": [
+						"transcript"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve trancript",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.assemblyai.com/transcript/3333",
+					"protocol": "https",
+					"host": [
+						"api",
+						"assemblyai",
+						"com"
+					],
+					"path": [
+						"transcript",
+						"3333"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create model from phrases",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phrases\": [\n\t\t\"hello foobar\",\n\t\t\"goodnight foobar\",\n\t\t\"foobar turn off the lights\",\n\t\t\"foobar turn on the lights\"\n\t]\n}"
+				},
+				"url": {
+					"raw": "https://api.assemblyai.com/model",
+					"protocol": "https",
+					"host": [
+						"api",
+						"assemblyai",
+						"com"
+					],
+					"path": [
+						"model"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve model",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.assemblyai.com/model/7777",
+					"protocol": "https",
+					"host": [
+						"api",
+						"assemblyai",
+						"com"
+					],
+					"path": [
+						"model",
+						"7777"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create trancript from audio url with model",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"audio_src_url\": \"https://s3-us-west-2.amazonaws.com/chappy/dnc-2004-speech-8khz_clip.wav\",\n\t\"model_id\": 7777\n}"
+				},
+				"url": {
+					"raw": "https://api.assemblyai.com/transcript",
+					"protocol": "https",
+					"host": [
+						"api",
+						"assemblyai",
+						"com"
+					],
+					"path": [
+						"transcript"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "your-secret-api-token",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "2ef0a47f-73fe-4aa5-8900-0ce3e202cd6d",
+			"key": "example_audio_url_obama",
+			"value": "https://s3-us-west-2.amazonaws.com/chappy/dnc-2004-speech-8khz_clip.wav",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"id": "d850c940-e895-4e25-a424-1a452fed23ff",
+			"key": "transcript_id",
+			"value": "3333",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"id": "b81e6702-c0b8-4249-9ebb-1f8459f67f15",
+			"key": "model_id",
+			"value": "7777",
+			"type": "string",
+			"description": ""
+		}
+	]
+}
