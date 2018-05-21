@@ -12,5 +12,5 @@ Edit Collection >> Authorization >> Token
 
 - Install [Postman](https://www.getpostman.com/)
 - Download [assemblyai-postman.json](https://raw.githubusercontent.com/AssemblyAI/assemblyai-postman/master/assemblyai-postman.json)
-- Import collection from file
-- Edit Collection >> Authorization >> Token
+- Import collection from file.
+- Edit Collection >> Authorization >> Token.
