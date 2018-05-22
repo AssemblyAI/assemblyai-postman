@@ -13,11 +13,15 @@
 					{
 						"key": "Content-Type",
 						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{api_token}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"audio_src_url\": \"https://s3-us-west-2.amazonaws.com/chappy/dnc-2004-speech-8khz_clip.wav\"\n}"
+					"raw": "{\n\t\"audio_src_url\": \"{{example_audio_url_obama}}\"\n}"
 				},
 				"url": {
 					"raw": "https://api.assemblyai.com/transcript",
@@ -38,13 +42,18 @@
 			"name": "Retrieve trancript",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{api_token}}"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://api.assemblyai.com/transcript/3333",
+					"raw": "https://api.assemblyai.com/transcript/{{transcript_id}}",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -53,7 +62,7 @@
 					],
 					"path": [
 						"transcript",
-						"3333"
+						"{{transcript_id}}"
 					]
 				}
 			},
@@ -67,6 +76,10 @@
 					{
 						"key": "Content-Type",
 						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{api_token}}"
 					}
 				],
 				"body": {
@@ -92,13 +105,18 @@
 			"name": "Retrieve model",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{api_token}}"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://api.assemblyai.com/model/7777",
+					"raw": "https://api.assemblyai.com/model/{{model_id}}",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -107,7 +125,7 @@
 					],
 					"path": [
 						"model",
-						"7777"
+						"{{model_id}}"
 					]
 				}
 			},
@@ -121,11 +139,15 @@
 					{
 						"key": "Content-Type",
 						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{api_token}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"audio_src_url\": \"https://s3-us-west-2.amazonaws.com/chappy/dnc-2004-speech-8khz_clip.wav\",\n\t\"model_id\": 7777\n}"
+					"raw": "{\n\t\"audio_src_url\": \"{{example_audio_url_obama}}\",\n\t\"model_id\": {{model_id}}\n}"
 				},
 				"url": {
 					"raw": "https://api.assemblyai.com/transcript",
@@ -143,35 +165,54 @@
 			"response": []
 		}
 	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "your-secret-api-token",
-				"type": "string"
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "42c3629b-7d82-420d-a79c-96e93996d949",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
 			}
-		]
-	},
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "077d5b56-c2f3-4922-8224-992e9891374e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
-			"id": "2ef0a47f-73fe-4aa5-8900-0ce3e202cd6d",
+			"id": "fcea3dd2-9a86-4ce8-b016-254c21782a1b",
 			"key": "example_audio_url_obama",
 			"value": "https://s3-us-west-2.amazonaws.com/chappy/dnc-2004-speech-8khz_clip.wav",
 			"type": "string",
 			"description": ""
 		},
 		{
-			"id": "d850c940-e895-4e25-a424-1a452fed23ff",
+			"id": "6111d78b-f00a-4c3b-b620-41433031ca4d",
 			"key": "transcript_id",
 			"value": "3333",
 			"type": "string",
 			"description": ""
 		},
 		{
-			"id": "b81e6702-c0b8-4249-9ebb-1f8459f67f15",
+			"id": "08816aea-e230-4fa5-bba9-1d4d5b5a1202",
 			"key": "model_id",
 			"value": "7777",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"id": "511ef1d4-966a-4e72-9405-6dc633c43f80",
+			"key": "api_token",
+			"value": "your-secret-api-token",
 			"type": "string",
 			"description": ""
 		}
