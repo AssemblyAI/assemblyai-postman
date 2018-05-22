@@ -18,7 +18,7 @@ Edit Collection >> Authentication >> Token
 ## Methods
 
 - Create a transcript from an audio url.
-- Retrieve a transcript.
+- Retrieve a transcript by ID.
 - Create a model from a list of phrases.
-- Retrieve a model.
-- Create a transcript from an audio url with a model.
+- Retrieve a model by ID.
+- Create a transcript from an audio url with a model ID.
