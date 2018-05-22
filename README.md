@@ -6,11 +6,19 @@ Postman client workspace
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/44773f0ce4dd9fe3e62d)
 
-Edit Collection >> Variables >> api_token
+Edit Collection >> Authentication >> Token
 
 ## Usage
 
 - Install [Postman](https://www.getpostman.com/)
 - Download [assemblyai-postman.json](https://raw.githubusercontent.com/AssemblyAI/assemblyai-postman/master/assemblyai-postman.json)
 - Import collection from file.
-- Edit Collection >> Variables >> api_token
+- Edit Collection >> Authentication >> Token
+
+## Methods
+
+- Create a transcript from an audio url.
+- Retrieve a transcript.
+- Create a model from a list of phrases.
+- Retrieve a model.
+- Create a transcript from an audio url with a model.
