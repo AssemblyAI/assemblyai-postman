@@ -4,7 +4,7 @@ Postman client workspace
 
 ## Quickstart
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/44773f0ce4dd9fe3e62d)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e8ec60f96328853bcd76)
 
 Edit Collection >> Authentication (Bearer) >> Token
 
